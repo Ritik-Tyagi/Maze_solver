@@ -67,8 +67,8 @@ maze=[
 while True:
     user_input2=int(input("""
       1. Generate New puzzle
-      2. Find the Best Path and Print
-      3. Exit the Game
+      2. Find the Best Path and Print Please Type 2
+      3. If you Want to Exit the Game Please Type 3
       Enter your choice (1/2/3): """))
     if user_input2==1:
         n=int(input("Enter the size of Maze(n*n): "))
