@@ -67,7 +67,7 @@ maze=[
 while True:
     user_input2=int(input("""
       1. Generate New puzzle
-      2. Print the path
+      2. Find the Best Path and Print
       3. Exit the Game
       Enter your choice (1/2/3): """))
     if user_input2==1:
