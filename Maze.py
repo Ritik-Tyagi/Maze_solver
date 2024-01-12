@@ -64,3 +64,33 @@ maze=[
         ['🟥', '🟥', '🟦', '🟥', '🟦'],
         ['🟥', '🟥', '🟥', '🟦', '🟦'],
         ['🟥', '🟥', '🟥', '🟥', '🟦']]
+while True:
+    user_input2=int(input("""
+      1. Generate New puzzle
+      2. Print the path
+      3. Exit the Game
+      Enter your choice (1/2/3): """))
+    if user_input2==1:
+        n=int(input("Enter the size of Maze(n*n): "))
+        start = (0, 0)
+        end = (n - 1, n - 1)
+        maze=generate_maze(n, n, start, end) 
+        # Print the generated maze
+        for row in maze:
+            print(row)
+        print("Maze generated!")                          
+    elif user_input2==2:
+        result_path = maze_solver(maze)
+        if len(result_path)>0:
+            for lis in result_path:
+                r=lis[0]
+                c=lis[1]
+                maze[r][c]="👻"
+            print("------------------------------------------------------------------------------")    
+            for row in maze:
+                print(row)
+        else:
+            print("NOTE FOUND PERFECT PATH")    
+    else:
+        print("Thanks You")
+        break
