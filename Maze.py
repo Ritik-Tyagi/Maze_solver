@@ -85,7 +85,7 @@ while True:
             for lis in result_path:
                 r=lis[0]
                 c=lis[1]
-                maze[r][c]="👻"
+                maze[r][c]="🦢"
             print("------------------------------------------------------------------------------")    
             for row in maze:
                 print(row)
