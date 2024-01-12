@@ -90,7 +90,8 @@ while True:
             for row in maze:
                 print(row)
         else:
-            print("NOTE FOUND PERFECT PATH")    
+            print("NOTE FOUND PERFECT PATH 😔")    
     else:
         print("Thanks You")
         break
+    ## thats all of my side 
