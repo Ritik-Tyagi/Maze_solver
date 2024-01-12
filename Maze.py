@@ -1,6 +1,6 @@
 import random
 def generate_maze(rows, cols, start, end):
-    maze = [["🟥"] * cols for _ in range(rows)]
+    maze = [["🥎"] * cols for _ in range(rows)]
     stack = [(0, 0)]
     visited = set()
 
@@ -8,7 +8,7 @@ def generate_maze(rows, cols, start, end):
         current = stack[-1]
         x, y = current
 
-        maze[x][y] = "🟦" # Mark the current cell as visited
+        maze[x][y] = "🏐" # Mark the current cell as visited
 
         if current == end:
             break
@@ -40,7 +40,7 @@ def maze_solver(maze):
     while queue:
         (current_row, current_col), current_path = queue.popleft()
 
-        if not (0 <= current_row < n and 0 <= current_col < m) or maze[current_row][current_col] == "🟥" or visited[current_row][current_col]:
+        if not (0 <= current_row < n and 0 <= current_col < m) or maze[current_row][current_col] == "🥎" or visited[current_row][current_col]:
             continue
 
         visited[current_row][current_col] = True
@@ -53,17 +53,17 @@ def maze_solver(maze):
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         for dr, dc in directions:
             next_row, next_col = current_row + dr, current_col + dc
-            if 0 <= next_row < n and 0 <= next_col < m and not visited[next_row][next_col] and maze[next_row][next_col] == "🟦":
+            if 0 <= next_row < n and 0 <= next_col < m and not visited[next_row][next_col] and maze[next_row][next_col] == "🏐":
                 queue.append(((next_row, next_col), current_path[:]))
 
     return []
 
 maze=[
-        ['🟦', '🟦', '🟦', '🟥', '🟥'],
-        ['🟥', '🟦', '🟦', '🟦', '🟦'],
-        ['🟥', '🟥', '🟦', '🟥', '🟦'],
-        ['🟥', '🟥', '🟥', '🟦', '🟦'],
-        ['🟥', '🟥', '🟥', '🟥', '🟦']]
+        ['🏐', '🏐', '🏐', '🥎', '🥎'],
+        ['🥎', '🏐', '🏐', '🏐', '🏐'],
+        ['🥎', '🥎', '🏐', '🥎', '🏐'],
+        ['🥎', '🥎', '🥎', '🏐', '🏐'],
+        ['🥎', '🥎', '🥎', '🥎', '🏐']]
 while True:
     user_input2=int(input("""
       1. If you want to Generate a New puzzle Please Type 1
@@ -85,7 +85,7 @@ while True:
             for lis in result_path:
                 r=lis[0]
                 c=lis[1]
-                maze[r][c]="🦢"
+                maze[r][c]="🔷"
             print("------------------------------------------------------------------------------")    
             for row in maze:
                 print(row)
